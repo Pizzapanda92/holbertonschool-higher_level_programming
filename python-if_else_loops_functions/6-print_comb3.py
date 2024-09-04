@@ -5,6 +5,6 @@ for i in range(0, 10):
         if i == y or i > y:
             continue
         elif i == 8 and y == 9:
-            print("{:01}".format(i) + "{:01}".format(y), end="")
+            print("{:01}".format(i) + "{:01}".format(y))
         else:
             print("{:01}".format(i) + "{:01}".format(y), end=", ")
