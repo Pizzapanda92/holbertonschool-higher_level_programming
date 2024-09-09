@@ -5,5 +5,5 @@ def print_matrix_integer(matrix=[[]]):
             if args < len(ligne) - 1:
                 print("{:d}".format(ligne[args]), end=" ")
             else:
-                print("{:d}".format(args), end="")
+                print("{:d}".format(ligne[args]), end="")
         print()
