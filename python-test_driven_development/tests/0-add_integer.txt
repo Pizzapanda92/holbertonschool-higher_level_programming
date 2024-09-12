@@ -1,0 +1,31 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> (add_integer(1, 2))
+3
+
+>>> (add_integer(100, -2))
+98
+
+>>> (add_integer(2))
+100
+
+>>> (add_integer(100.3,-2))
+98
+
+>>> (add_integer(123456789, 987654321))
+1111111110
+
+>>> (add_integer(-50, -50))
+-100
+
+>>> (add_integer(2.7, 3.3))
+6
+
+>>> (add_integer(100, v))
+Traceback (most recent call last):
+...
+
+>>> add_integer(float('inf'), 0)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
