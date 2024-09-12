@@ -21,6 +21,9 @@
 >>> (add_integer(2.7, 3.3))
 6
 
+>>> add_integer(100.3, -2.5)
+98
+
 >>> (add_integer(100, v))
 Traceback (most recent call last):
 ...
