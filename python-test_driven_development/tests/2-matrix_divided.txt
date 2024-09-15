@@ -1,0 +1,85 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 1)
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 20)
+[[0.05, 0.1, 0.15], [0.2, 0.25, 0.3]]
+
+>>> matrix = [[2.5, 4.0, 6.0], [8.5, 10.0, 12.0]]
+>>> matrix_divided(matrix, 2.5)
+[[1.0, 1.6, 2.4], [3.4, 4.0, 4.8]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 1)
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, -10)
+[[-0.1, -0.2, -0.3], [-0.4, -0.5, -0.6]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 20.20)
+[[0.05, 0.1, 0.15], [0.2, 0.25, 0.3]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, -20.20)
+[[-0.05, -0.1, -0.15], [-0.2, -0.25, -0.3]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, float('inf'))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+>>> matrix = [[1], [2], [3]]
+>>> matrix_divided(matrix, 20)
+[[0.05], [0.1], [0.15]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+...
+    raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, sasuke)
+Traceback (most recent call last):
+...
+NameError: name 'sasuke' is not defined
+
+>>> matrix = [[1, 2, 3], [4, 'five', 6]]
+>>> matrix_divided(matrix, 10)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[1, 2], 3, [4, 5]]
+>>> matrix_divided(matrix, 1)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 's')
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix,)
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided()
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+>>> matrix = []
+>>> matrix_divided(matrix, 1)
+Traceback (most recent call last):
+...
+IndexError: list index out of range
