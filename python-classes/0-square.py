@@ -8,5 +8,5 @@ class Square:
     """
     Currently, this class is empty and serves as a placeholder.
     """
-    
+
     pass

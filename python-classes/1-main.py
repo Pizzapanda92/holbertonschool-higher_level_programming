@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+Script that demonstrates the usage of the Square class
+imported from the module '1-square'.
+"""
+
+
 Square = __import__('1-square').Square
 
 my_square = Square(3)
