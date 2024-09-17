@@ -6,7 +6,8 @@ Class Rectangle that defines a rectangle by its width and height.
 
 class Rectangle:
     """
-    Represents a rectangle with private instance attributes 'width' and 'height'.
+    Represents a rectangle with private
+    instance attributes 'width' and 'height'.
     Provides getter and setter for 'width' and 'height' with validation.
     """
 
