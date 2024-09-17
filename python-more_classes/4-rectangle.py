@@ -83,7 +83,8 @@ class Rectangle:
         """
     Calculates and returns the area of the rectangle.
 
-    The area is calculated by multiplying the width and height of the rectangle.
+    The area is calculated by multiplying the width and
+    height of the rectangle.
 
     Returns:
         int: The area of the rectangle.
@@ -99,7 +100,8 @@ class Rectangle:
     If either the width or height is zero, the perimeter is defined to be 0.
 
     Returns:
-        int: The perimeter of the rectangle, or 0 if either the width or height is 0.
+        int: The perimeter of the rectangle,
+        or 0 if either the width or height is 0.
     """
         if self.__height == 0 or self.__width == 0:
             return 0
