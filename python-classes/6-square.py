@@ -101,6 +101,6 @@ class Square:
         Getter method for position.
 
         Returns:
-            tuple: The position of the square as a tuple of 2 positive integers.
+            tuple: The position of the square as a tuple of 2 positive integers
         """
         return self.__position
