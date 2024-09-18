@@ -172,3 +172,11 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """
+        classmethod were width == height == size
+        """
+
+        return cls(size, size)
