@@ -30,8 +30,8 @@ class Rectangle:
             height (int): The height of the rectangle, default is 0.
         """
 
-        self.height = height
         self.width = width
+        self.height = height
         """
         Increment the counter each time a new instance is created
         """
