@@ -15,6 +15,10 @@ class Rectangle:
     compteur of instances
     """
     number_of_instances = 0
+    """
+    gestion of symbol
+    """
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """
@@ -122,12 +126,12 @@ class Rectangle:
         print the rectangle with the character #
         """
 
-        simbole = '#'
+        self.print_symbol
         if self.__width == 0 or self.__height == 0:
             return ""
         for i in range(self.__height - 1):
-            print(str(simbole) * self.__width)
-        return (str(simbole) * self.__width)
+            print(str(self.print_symbol) * self.__width)
+        return (str(self.print_symbol) * self.__width)
 
     def __repr__(self):
         """
