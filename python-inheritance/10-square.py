@@ -55,6 +55,9 @@ class Rectangle(BaseGeometry):
 
 
 class Square(Rectangle):
+    """
+    Represents a square, inherits from Rectangle.
+    """
 
     def __init__(self, size):
         """
