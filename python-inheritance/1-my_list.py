@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+A subclass of list that includes a method
+to print the list in sorted order.
+"""
+
+
 class MyList(list):
     """
     Class that inherits from list and
