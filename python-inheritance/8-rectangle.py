@@ -19,23 +19,21 @@ class BaseGeometry:
         TypeError: If 'value' is not an integer.
         ValueError: If 'value' is <= 0.
         """
-        if type(value) is not int:
+
+        if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
 
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
+    class Rectangle:
+        """Represents a rectangle, inherits from BaseGeometry"""
 
-class Rectangle(BaseGeometry):
-    """
-    Represents a rectangle, inherits from BaseGeometry
-    """
-
-    def __init__(self, width, height):
+        def __init__(self, width, height):
+            """
+        Validates that the provided value is a positive integer.
         """
-        Validates that width and height are positive integers.
-        """
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-        self.__width = width
-        self.__height = height
+            self.integer_validator("width", width)
+            self.integer_validator("height", height)
+            self.__width = width
+            self.__height = height
