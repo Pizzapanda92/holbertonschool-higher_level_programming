@@ -59,13 +59,13 @@ class Rectangle(Shape):
     Inherits from Shape and implements the area and perimeter methods.
     """
 
-    def __init__(self, largeur, longeur):
+    def __init__(self, width, height):
         """
         Initializes a Rectangle with a given width (largeur)
         and length (longeur).
         """
-        self.largeur = largeur
-        self.longeur = longeur
+        self.largeur = width
+        self.longeur = height
 
     def area(self):
         """
@@ -88,8 +88,6 @@ def shape_info(shape):
     This function uses duck typing to assume that the passed object has
     'area' and 'perimeter' methods.
     """
-    area = shape.area()
-    perimeter = shape.perimeter()
 
-    print(f"Area: {area}")
-    print(f"Perimeter: {perimeter}")
+    print(f"Area:", shape.area())
+    print(f"Perimeter:",  shape.perimeter())
