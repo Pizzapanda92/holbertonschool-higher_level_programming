@@ -50,7 +50,7 @@ class Circle(Shape):
         Calculates and returns the perimeter (circumference) of the circle.
         Formula: 2 * pi * radius
         """
-        return 2 * pi * self.radius
+        return 2 * pi * abs(self.radius)
 
 
 class Rectangle(Shape):
