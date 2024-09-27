@@ -26,14 +26,15 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
-    class Rectangle:
-        """Represents a rectangle, inherits from BaseGeometry"""
 
-        def __init__(self, width, height):
-            """
-        Validates that the provided value is a positive integer.
+class Rectangle(BaseGeometry):
+    """Represents a rectangle, inherits from BaseGeometry"""
+
+    def __init__(self, width, height):
         """
-            self.integer_validator("width", width)
-            self.integer_validator("height", height)
-            self.__width = width
-            self.__height = height
+    Validates that the provided value is a positive integer.
+    """
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
