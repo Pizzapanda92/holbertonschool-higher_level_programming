@@ -29,3 +29,4 @@ TypeError: descriptor 'append' for 'list' objects doesn't apply to a 'str' objec
 
 >>> my_list = MyList()
 >>> my_list.print_sorted()
+[]
