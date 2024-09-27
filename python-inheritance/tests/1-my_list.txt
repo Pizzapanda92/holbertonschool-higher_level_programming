@@ -1,7 +1,7 @@
 >>> MyList = __import__('1-my_list').MyList
 
->>> my_tuple = (1, 2, 4, 6)
->>> print(my_tuple)
+>>> Mylist = (1, 2, 4, 6)
+>>> print(Mylist)
 (1, 2, 4, 6)
 
 >>> my_list = MyList()
@@ -10,18 +10,10 @@
 >>> my_list.append(3)
 >>> my_list.append(5)
 
->>> my_list.append("m")
+>>> MyList.append("y")
 Traceback (most recent call last):
-TypeError: 'int' and 'str' cannot be compared
+TypeError: descriptor 'append' for 'list' objects doesn't apply to a 'str' object
 
->>> print(my_list)
-[1, 4, 3, 5, 'm']
-
->>> my_list.print_sorted()
-Traceback (most recent call last):
-TypeError: '<' not supported between instances of 'str' and 'int'
-
->>> my_list.remove("m")
 >>> print(my_list)
 [1, 4, 3, 5]
 
@@ -37,4 +29,3 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 
 >>> my_list = MyList()
 >>> my_list.print_sorted()
-[]
