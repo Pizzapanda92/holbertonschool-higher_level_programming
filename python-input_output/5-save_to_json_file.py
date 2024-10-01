@@ -10,7 +10,7 @@ import json
 
 def save_to_json_file(my_obj, filename):
     """
-    Writes a Python object to a file in JSON format
+    Writes a Python object to a file in JSON format.
     """
     with open(filename, "w", encoding="utf-8") as f:
         return json.dump(my_obj, f)
