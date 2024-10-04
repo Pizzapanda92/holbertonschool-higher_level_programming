@@ -11,6 +11,7 @@ def convert_csv_to_json(csv_filename):
 
         with open('data.json', 'w') as j_file:
             json.dump(data_list, j_file, indent=4)
+
         return True
     except FileNotFoundError:
         return False
