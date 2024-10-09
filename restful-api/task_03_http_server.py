@@ -7,6 +7,7 @@ from http.server import HTTPServer
 class GestionRequete(BaseHTTPRequestHandler):
 
     def do_GET(self):
+
         if self.path == '/':
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
@@ -25,14 +26,14 @@ class GestionRequete(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps(data).encode('utf-8'))
 
-        elif self.path == "/status":
+        elif self.path == '/status':
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"OK")
 
         else:
-            self.send_error(404)
+            self.send_response(404)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"Endpoint not found")
@@ -42,7 +43,7 @@ def run(server_class=HTTPServer, handler_class=GestionRequete, port=8000):
 
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
-    print(f"Serving on port {port}...")
+    print("Serving on port {}...".format(port))
     httpd.serve_forever()
 
 
