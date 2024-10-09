@@ -34,14 +34,13 @@ class GestionRequete(BaseHTTPRequestHandler):
             self.send_error(404, "Endpoint not found")
 
 
-def start_serveur():
+def run(server_class=HTTPServer, handler_class=GestionRequete, port=8000):
 
-    adresse_serveur = ("localhost", 8000)
-    mon_serveur = HTTPServer(adresse_serveur, GestionRequete)
-
-    print("Serveur démarré sur le port 8000...")
-
-    mon_serveur.serve_forever()
+    server_address = ('', port)
+    httpd = server_class(server_address, handler_class)
+    print(f"Serveur démarré sur le port {port}...")
+    httpd.serve_forever()
 
 
-start_serveur()
+if __name__ == '__main__':
+    run()
