@@ -28,10 +28,13 @@ class GestionRequete(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"ok")
+            self.wfile.write(b"OK")
 
         else:
-            self.send_error(404, "Endpoint not found")
+            self.send_error(404)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Endpoint not found")
 
 
 def run(server_class=HTTPServer, handler_class=GestionRequete, port=8000):
