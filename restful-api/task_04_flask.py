@@ -10,7 +10,7 @@ users = {}
 
 @app.route("/")
 def home():
-    return ('Welcome to the Flask API!')
+    return 'Welcome to the Flask API!'
 
 
 @app.route('/data')
@@ -19,8 +19,8 @@ def data():
 
 
 @app.route("/status")
-def statu():
-    return ("ok")
+def status():
+    return "OK"
 
 
 @app.route("/users/<username>")
