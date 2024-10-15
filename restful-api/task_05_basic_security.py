@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from flask import Flask, jsonify, request
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_jwt_extended import jwt_required, create_access_token, JWTManager
+from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity, JWTManager
 from flask_httpauth import HTTPBasicAuth
 
 app = Flask(__name__)
@@ -18,6 +18,13 @@ users = {
 }
 
 
+@auth.verify_password
+def verify_password(username, password):
+    user = users.get(username)
+    if user and check_password_hash(users["password"], password):
+        return user
+
+
 @app.route('/login', methods=['POST'])
 def login():
     username = request.json.get("username")
@@ -31,28 +38,16 @@ def login():
         return jsonify({"error": "Invalid credentials"}), 401
 
 
-@jwt.unauthorized_loader
-def handle_unauthorized_error(err):
-    return jsonify({"error": "Missing or invalid token"}), 401
-
-
-@auth.verify_password
-def verify_password(username, password):
-    if username in users and check_password_hash(users[username]["password"], password):
-        return username
-
-
-@app.route('/basic-protected')
+@app.route('/basic-protected', methods=['GET'])
 @auth.login_required
 def basic_protected():
-    return jsonify({"message": "Basic Auth: Access Granted"})
+    return "Basic Auth: Access Granted"
 
 
 @app.route('/jwt-protected', methods=['GET'])
 @jwt_required()
-def jwt_protected():
-    current_user = get_jwt_identity()
-    return jsonify(message="JWT Auth: Access Granted", user=current_user)
+def protected():
+    return "JWT Auth: Access Granted"
 
 
 @app.route('/admin-only', methods=['GET'])
