@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 from flask import Flask, jsonify, request
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity, JWTManager
 from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_jwt_extended import create_access_token, jwt_required, JWTManager, get_jwt_identity
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
@@ -25,6 +25,12 @@ def verify_password(username, password):
         return user
 
 
+@app.route('/basic-protected', methods=['GET'])
+@auth.login_required
+def basic_protected():
+    return "Basic Auth: Access Granted"
+
+
 @app.route('/login', methods=['POST'])
 def login():
     username = request.json.get("username")
@@ -36,12 +42,6 @@ def login():
         return jsonify(access_token=access_token)
     else:
         return jsonify({"error": "Invalid credentials"}), 401
-
-
-@app.route('/basic-protected', methods=['GET'])
-@auth.login_required
-def basic_protected():
-    return "Basic Auth: Access Granted"
 
 
 @app.route('/jwt-protected', methods=['GET'])
