@@ -1,2 +1,2 @@
-"commande for show the databases" #!/user/bin/bash
+"commande for show the databases" #!/bin/bash
 SHOW DATABASES
