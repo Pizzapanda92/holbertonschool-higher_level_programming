@@ -1,2 +1,2 @@
-user #!/bin/bash
+#!/bin/bash
 SHOW DATABASES
