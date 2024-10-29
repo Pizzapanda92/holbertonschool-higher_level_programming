@@ -1,4 +1,4 @@
--- List all records in second_table with a non-null name, ordered by score in descending order
+-- List all records in second_table with a non-null name, ordered by score in descending  order
 SELECT score,
     name
 FROM second_table
