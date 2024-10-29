@@ -1,3 +1,3 @@
--- list row of table
+-- list row of table first_table
 SELECT *
 FROM first_table;
