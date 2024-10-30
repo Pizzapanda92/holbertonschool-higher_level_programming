@@ -1,3 +1,4 @@
+-- Lists all TV shows with the genre "Comedy", sorted alphabetically by show title
 SELECT tv_shows.title
 FROM tv_shows
     JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
