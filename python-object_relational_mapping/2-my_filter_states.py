@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+# script that takes in an argument and displays all values in the states table of hbtn_0e_0_usa where name matches the argument
 import MySQLdb
 import sys
 
@@ -14,10 +14,12 @@ if __name__ == '__main__':
     )
 
     cursor = db.cursor()
-
+    # Get the search value from the command-line argument
     search_value = sys.argv[4]
+
+    # Execute SQL query to select states where the name matches the search value
     cursor.execute(
-        "SELECT * frome states WHERE name IN (sys.argv[4]) ORDER BY id ASC")
+        "SELECT * from states WHERE name = %s ORDER BY id ASC", (search_value,))
 
     rows = cursor.fetchall()
     for row in rows:
