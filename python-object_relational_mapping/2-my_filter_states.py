@@ -19,13 +19,12 @@ if __name__ == '__main__':
     )
 
     cursor = db.cursor()
-    # Get the search value from the command-line argument
     search_value = sys.argv[4]
 
-    """Execute SQL query to select states
-        where the name matches the search value"""
-    cursor.execute(
-        "SELECT * from states WHERE name= %s ORDER BY id ASC", (search_value,))
+    # Use format to create the SQL query with the user input
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
+        search_value)
+    cursor.execute(query)
 
     # Fetch all query results
     rows = cursor.fetchall()
