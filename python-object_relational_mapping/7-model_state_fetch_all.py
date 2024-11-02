@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Lists all State objects from the database hbtn_0e_6_usa, sorted by ascending id.
+Lists all State objects from the database hbtn_0e_6_usa,
+sorted by ascending id.
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -21,7 +22,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query all State objects from the database, ordered by id in ascending order
+    """Query all State objects from the database,
+    ordered by id in ascending order"""
     states = session.query(State).order_by(State.id).all()
 
     for state in states:
