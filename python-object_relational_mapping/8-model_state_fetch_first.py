@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Lists the State object with id=1 from the database hbtn_0e_6_usa.
+Prints the first State object from the database hbtn_0e_6_usa,
+or "Nothing" if the table is empty.
 """
 
 from sqlalchemy import create_engine
@@ -21,10 +22,11 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id).session.query(1)
+    state = session.query(State).order_by(State.id).first(1)
 
-    state = session.query(State).filter_by(id='1').first()
-
-    print(f'{state.id}: {state.name}')
+    if state:
+        print(f'{state.id}: {state.name}')
+    else:
+        print("Nothing")
 
     session.close()
