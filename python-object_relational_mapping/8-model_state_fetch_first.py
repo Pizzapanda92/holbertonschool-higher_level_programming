@@ -17,7 +17,7 @@ if __name__ == '__main__':
     database_name = sys.argv[3]
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        mysql_username, mysql_password, database_name), pool_pre_ping=True)
+        mysql_username, mysql_password, database_name))
 
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -25,7 +25,7 @@ if __name__ == '__main__':
     state = session.query(State).order_by(State.id).first(1)
 
     if state:
-        print(f'{state.id}: {state.name}')
+        print("{}: {}".format(state.id, state.name))
     else:
         print("Nothing")
 
